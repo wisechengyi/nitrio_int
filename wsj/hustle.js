@@ -1,20 +1,24 @@
-// $(function () {
-//     var headline = $(".wsj-article-headline")[0].innerText;
-//     chrome.storage.local.set({'headline': headline}, function () {
-//         console.log("saved")
-//     })
-// });
-
-
-function getword(info,tab) {
+function getword(info, tab) {
     console.log("Word " + info.selectionText + " was clicked.");
-    chrome.tabs.create({
-        url: "http://www.google.com/search?q=" + info.selectionText,
+
+    $.getJSON("http://127.0.0.1:5000/score_word/" + info.selectionText).done(function (data) {
+
+        chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+            chrome.tabs.sendMessage(tabs[0].id, data, function (response) {
+            });
+        });
+
     });
+
+    // chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+    //     chrome.tabs.sendMessage(tabs[0].id, {action: "SendIt"}, function(response) {});
+    // });
+
+
 }
 
 chrome.contextMenus.create({
-    title: "Search: %s",
-    contexts:["selection"],
+    title: "Get scrabble info: %s",
+    contexts: ["selection"],
     onclick: getword,
 });

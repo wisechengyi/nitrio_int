@@ -8,27 +8,29 @@
     "default_popup": "popup.html",
     "default_title": "Article Hustler"
   },
-//  "content_scripts": [
-//    {
-//      "matches": [
-//        "<all_urls>"
-//      ],
-//      "js": [
-////        "jquery.min.js",
-////        "hustle.js"
-//      ]
-//    }
-//  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js",
+        "jquery.min.js"
+      ],
+      "css": [
+        "w3.css"
+      ]
+    }
+  ],
   "permissions": [
     "contextMenus",
     "tabs",
     "cookies"
-    //    "https://ajax.googleapis.com/"
-    //    "storage",
-    //    "windows",
-    //    "https://www.google.com/*"
   ],
   "background": {
-    "scripts": ["hustle.js"]
+    "scripts": [
+      "hustle.js",
+      "jquery.min.js"
+    ]
   }
 }
