@@ -17,7 +17,7 @@ chrome.extension.onMessage.addListener(function (msg, sender, sendResponse) {
         display = "invalid word: " + msg.word;
     }
     $('body').prepend(
-        '<div class="w3-card-4" style="width:200px;">' +
+        '<div style="position: absolute; top: 0; right: 0; width: 250px;" class="w3-card-4">' +
         '<header class="w3-container w3-blue">Scrabble info</header>' +
         '<div class="w3-container">' + display + '</div>' +
         '</div>');
