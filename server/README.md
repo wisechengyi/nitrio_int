@@ -1,4 +1,6 @@
-To start server:
+# Nitrio Server
+
+Under the `server` folder:
 
 virtualenv env
 source env/bin/activate

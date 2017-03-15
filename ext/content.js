@@ -22,7 +22,4 @@ chrome.extension.onMessage.addListener(function (msg, sender, sendResponse) {
         '<header class="w3-container w3-blue">Scrabble info</header>' +
         '<div class="w3-container">' + display + '</div>' +
         '</div>');
-    // if (msg.action == 'SendIt') {
-    //     alert("Message recieved!");
-    // }
 });

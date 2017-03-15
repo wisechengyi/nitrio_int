@@ -9,8 +9,6 @@ function getword(info, tab) {
         });
 
     });
-
-
 }
 
 chrome.contextMenus.create({
