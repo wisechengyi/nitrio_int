@@ -9,6 +9,10 @@ chrome.runtime.onMessage.addListener(
 
 chrome.extension.onMessage.addListener(function (msg, sender, sendResponse) {
     console.log(msg);
+    if (msg.error) {
+        alert("server error;")
+        return;
+    }
     var display = "";
     if (msg.valid) {
         display = "word: " + msg.word + " score: " + msg.score;

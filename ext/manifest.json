@@ -28,7 +28,7 @@
   ],
   "background": {
     "scripts": [
-      "hustle.js",
+      "background.js",
       "jquery.min.js"
     ]
   }
