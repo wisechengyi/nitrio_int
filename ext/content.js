@@ -20,10 +20,14 @@ chrome.extension.onMessage.addListener(function (msg, sender, sendResponse) {
 
     var current_index_highest = $.topZIndex("div");
 
-
     $('body').prepend(
         '<div id="scrable-id" style="position: absolute; right: 0; width: 250px; z-index:' + current_index_highest + 1 + ' " class="w3-card-4">' +
         '<header class="w3-container w3-blue">Scrabble info</header>' +
         '<div class="w3-container w3-blue">' + display + '</div>' +
         '</div>');
+
+    window.setTimeout(function () {
+        $("#scrable-id").remove();
+    }, 5000);
+
 });
