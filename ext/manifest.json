@@ -13,7 +13,8 @@
       ],
       "js": [
         "content.js",
-        "jquery.min.js"
+        "jquery.min.js",
+        "jquery.topzindex.min.js"
       ],
       "css": [
         "w3.css"
